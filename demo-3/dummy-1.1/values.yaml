@@ -1,0 +1,4 @@
+# Default values for dummy.
+service:
+  type: ClusterIP
+  port: 80

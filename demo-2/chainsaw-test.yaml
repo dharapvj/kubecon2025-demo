@@ -1,0 +1,23 @@
+# chainsaw-test.yaml
+apiVersion: chainsaw.kyverno.io/v1alpha1
+kind: Test
+metadata:
+  name: clustersecrets-test
+spec:
+  namespace: chainsaw
+  # reportFormat: JUNIT-TEST
+  timeouts:
+    apply: 3s
+    assert: 3s
+    delete: 3s
+  steps:
+  - try:
+    # create resources in the cluster
+    - apply:
+        file: resources.yaml
+    # verify the operator reacted as expected
+    - assert:
+        file: expected.yaml
+    # verify the operator did not perform unexpected changes
+    - error:
+        file: fail.yaml

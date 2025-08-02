@@ -1,0 +1,6 @@
+# resource here should NOT be present in the cluster!
+apiVersion: v1
+kind: Secret
+metadata:
+  name: global-secret
+  namespace: kube-system

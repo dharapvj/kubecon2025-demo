@@ -1,0 +1,17 @@
+# Install the operator before applying this resource
+# helm repo add clustersecret https://charts.clustersecret.com/
+# helm install clustersecret clustersecret/cluster-secret --version 0.5.2 -n clustersecret --create-namespace
+
+apiVersion: clustersecret.io/v1
+kind: ClusterSecret
+metadata:
+  name: global-secret
+  namespace: clustersecret
+matchNamespace:
+  - default
+  - clustersecret
+avoidNamespaces:
+  - kube-system
+data:
+  username: MTIzNDU2Cg==
+  password: Nzg5MTAxMTIxMgo=

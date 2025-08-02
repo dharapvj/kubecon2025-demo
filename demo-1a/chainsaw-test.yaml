@@ -1,0 +1,19 @@
+apiVersion: chainsaw.kyverno.io/v1alpha1
+kind: Test
+metadata:
+  creationTimestamp: null
+  name: kubecon
+spec:
+  namespace: chainsaw
+  description: Demo-01 Test
+  timeouts:
+    apply: 1s
+    assert: 1s
+    cleanup: 1s
+  steps:
+  - description: Test step 1
+    name: step 1
+    try:
+    - assert:
+        file: whatever-be-the-name.yaml
+      description: assert availabilty of CoreDNS operation

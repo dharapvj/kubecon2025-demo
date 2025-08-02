@@ -1,0 +1,9 @@
+# Tests that there is a deployment named coredns with all replicas available
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: coredns
+  namespace: kube-system
+status:
+  readyReplicas: 2
+---

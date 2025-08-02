@@ -1,0 +1,20 @@
+apiVersion: chainsaw.kyverno.io/v1alpha1
+kind: Test
+metadata:
+  creationTimestamp: null
+  name: kubecon
+spec:
+  namespace: chainsaw
+  # reportFormat: JUNIT-TEST
+  description: Demo-03 Test
+  timeouts:
+    apply: 1s
+    assert: 1s
+    cleanup: 0s
+  steps:
+  - description: Test step 3
+    name: step 3
+    try:
+    - assert:
+        file: 01-assert.yaml
+      description: assert availabilty of dummy service

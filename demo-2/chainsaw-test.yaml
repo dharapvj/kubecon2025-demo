@@ -5,7 +5,6 @@ metadata:
   name: clustersecrets-test
 spec:
   namespace: chainsaw
-  # reportFormat: JUNIT-TEST
   timeouts:
     apply: 3s
     assert: 3s

@@ -12,7 +12,7 @@ spec:
     cleanup: 1s
   steps:
   - description: Test step 1
-    name: step 1
+    name: step 1a
     try:
     - assert:
         file: whatever-be-the-name.yaml

@@ -4,7 +4,7 @@ create-cluster:
 	kind create cluster
 
 demo-1:
-	chainsaw test --report-format JUNIT-TEST --assert-timeout 1s --cleanup-timeout 2s demo-1 --namespace chainsaw
+	chainsaw test --report-format JUNIT-TEST --assert-timeout 1s --cleanup-timeout 10s demo-1 --namespace chainsaw
 
 demo-1a:
 	chainsaw test demo-1a
